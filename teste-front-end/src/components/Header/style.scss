@@ -7,7 +7,6 @@ $color-bg-search: #F6F5F2;
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 
-
     .container {
         max-width: 1280px;
         margin: 0 auto;
@@ -20,17 +19,11 @@ $color-bg-search: #F6F5F2;
         .top-bar-content {
             display: flex;
             justify-content: center;
-            gap: 120px;
+            align-items: center;
             padding: 8px 0;
             font-size: 12px;
             color: #9F9F9F;
-            width: 764;
-            height: 20;
-            top: 6px;
-            left: 258px;
-            angle: 0 deg;
-            opacity: 1;
-            gap: 119px;
+            gap: 119px; // Medida exata que pegou do Figma
 
             span {
                 display: flex;
@@ -48,13 +41,19 @@ $color-bg-search: #F6F5F2;
     // --- Middle Bar (Logo, Search, Icons) ---
     .header-middle {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; // Isso já afasta o logo da esquerda e os ícones da direita
         align-items: center;
         padding: 24px 0;
 
         .logo-container {
+            .logo-image {
+                display: block;
+                width: 139px; // Adicionado 'px'
+                height: 41.3px; // Adicionado 'px'
+            }
+
             .logo-placeholder {
-                color: #333; // Cor do logo
+                color: #333;
                 font-size: 28px;
                 font-weight: bold;
                 letter-spacing: -1px;
@@ -64,10 +63,10 @@ $color-bg-search: #F6F5F2;
         .search-bar {
             display: flex;
             align-items: center;
-            background-color: #F6F5F2; // Cor de fundo do input cinza claro
-            border-radius: 8px;
-            width: 600px; // Ajusta conforme a necessidade
-            height: 48px;
+            background-color: #F6F5F2;
+            border-radius: 10px; // Atualizado para 10px do Figma
+            width: 630px; // Adicionado 'px'
+            height: 48px; // Adicionado 'px'
             padding: 0 16px;
 
             input {
@@ -93,17 +92,12 @@ $color-bg-search: #F6F5F2;
 
         .user-actions {
             display: flex;
-            gap: 32px; // Espaçamento entre os ícones
-            width: 216;
-            height: 32;
-            top: 52px;
-            left: 1064px;
-            angle: 0 deg;
-            opacity: 1;
+            align-items: center;
+            height: 32px; // Adicionado 'px'
             gap: 32px;
 
             .icon {
-                font-size: 28px; // Tamanho provisório pros emojis
+                font-size: 28px;
                 cursor: pointer;
                 color: #9F9F9F;
             }
@@ -112,7 +106,7 @@ $color-bg-search: #F6F5F2;
 
     // --- Nav Bar ---
     .main-nav {
-        border-top: 1px solid #F0F0F0; // Linha separadora
+        border-top: 1px solid #F0F0F0;
         padding: 16px 0;
 
         ul {
@@ -121,7 +115,7 @@ $color-bg-search: #F6F5F2;
             align-items: center;
 
             li {
-
+                display: flex; // Faltava isso aqui pra não desalinhar a coroa!
                 align-items: center;
                 gap: 8px;
                 font-size: 12px;
@@ -131,17 +125,9 @@ $color-bg-search: #F6F5F2;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
                 transition: color 0.3s;
-                width: 1141;
-                height: 20;
-                top: 114px;
-                left: 69px;
-                angle: 0 deg;
-                opacity: 1;
-                gap: 91px;
-
 
                 &.highlight {
-                    color: #4b0ac4; // Na imagem parece um roxo, tipo #3B2E92, verifique no Figma a cor exata
+                    color: #4b0ac4;
                 }
 
                 .material-symbols-outlined {
@@ -151,7 +137,6 @@ $color-bg-search: #F6F5F2;
                     vertical-align: middle;
                     line-height: 1;
                 }
-
             }
         }
     }
