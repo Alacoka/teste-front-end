@@ -1,56 +1,157 @@
+$color-purple: #3F3C88;
+$color-text-light: #9F9F9F;
+$color-bg-search: #F6F5F2;
+
 .main-header {
     background-color: #ffffff;
     width: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+
 
     .container {
-        max-width: 1200px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 16px 24px;
-        display: flex;
-        flex-direction: column; // Empilha a parte superior e o menu
-        gap: 16px;
+        padding: 0 80px;
+    }
 
-        .header-top {
+    .header-top-bar {
+        border-bottom: 1px solid #F0F0F0;
+
+        .top-bar-content {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            padding: 8px 0;
+            font-size: 12px;
+            color: #9F9F9F;
+            width: 764;
+            height: 20;
+            top: 6px;
+            left: 258px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 119px;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                b {
+                    color: #4b0ac4;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    // --- Middle Bar (Logo, Search, Icons) ---
+    .header-middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+
+        .logo-container {
+            .logo-placeholder {
+                color: #333; // Cor do logo
+                font-size: 28px;
+                font-weight: bold;
+                letter-spacing: -1px;
+            }
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #F6F5F2; // Cor de fundo do input cinza claro
+            border-radius: 8px;
+            width: 600px; // Ajusta conforme a necessidade
+            height: 48px;
+            padding: 0 16px;
+
+            input {
+                flex: 1;
+                border: none;
+                background: transparent;
+                outline: none;
+                font-size: 14px;
+                color: #9F9F9F;
+
+                &::placeholder {
+                    color: #9F9F9F;
+                }
+            }
+
+            button {
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 32px; // Espaçamento entre os ícones
+            width: 216;
+            height: 32;
+            top: 52px;
+            left: 1064px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 32px;
+
+            .icon {
+                font-size: 28px; // Tamanho provisório pros emojis
+                cursor: pointer;
+                color: #9F9F9F;
+            }
+        }
+    }
+
+    // --- Nav Bar ---
+    .main-nav {
+        border-top: 1px solid #F0F0F0; // Linha separadora
+        padding: 16px 0;
+
+        ul {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            .logo-container {
-                width: 150px; // Ajustar conforme Figma
-            }
+            li {
 
-            .search-bar {
-                flex-grow: 1;
-                margin: 0 40px;
-                // Adicionar estilos do input com ícone de lupa
-            }
+                align-items: center;
+                gap: 8px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #9F9F9F;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                transition: color 0.3s;
+                width: 1141;
+                height: 20;
+                top: 114px;
+                left: 69px;
+                angle: 0 deg;
+                opacity: 1;
+                gap: 91px;
 
-            .user-actions {
-                display: flex;
-                gap: 16px;
-                // Ícones de carrinho, coração, etc.
-            }
-        }
 
-        .main-nav {
-            ul {
-                display: flex;
-                justify-content: space-between; // Espalha os links uniformemente
-                list-style: none;
-
-                li {
-                    font-size: 14px;
-                    font-weight: 600;
-                    color: #9f9f9f;
-                    cursor: pointer;
-                    transition: color 0.3s;
-
-                    &:hover,
-                    &.active {
-                        color: #F01C4F; // Cor rosa da marca (ajustar exato do Figma)
-                    }
+                &.highlight {
+                    color: #4b0ac4; // Na imagem parece um roxo, tipo #3B2E92, verifique no Figma a cor exata
                 }
+
+                .material-symbols-outlined {
+                    font-size: 20px;
+                    font-weight: 400;
+                    display: inline-flex;
+                    vertical-align: middle;
+                    line-height: 1;
+                }
+
             }
         }
     }

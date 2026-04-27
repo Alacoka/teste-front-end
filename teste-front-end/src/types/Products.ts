@@ -6,6 +6,6 @@ export interface Product {
 }
 
 export interface ProductResponse {
-    sucess: boolean;
+    success: boolean;
     products: Product[];
 }

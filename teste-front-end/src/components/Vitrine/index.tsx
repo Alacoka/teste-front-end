@@ -14,7 +14,7 @@ export function Vitrine() {
             .then(response => response.json())
             .then((data: ProductResponse) => {
                 console.log("Dados da API: ", data);
-                if (data.sucess) {
+                if (data.success) {
                     setProducts(data.products);
                 }
             })
