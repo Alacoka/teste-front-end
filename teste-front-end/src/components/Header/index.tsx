@@ -5,7 +5,7 @@ export function Header() {
         <header className="main-header">
             <div className="container">
                 <h1>Econverse</h1>
-                <nav>
+                <nav className="main-nav">
                     <ul>
                         <li>Todas as Categorias</li>
                         <li>Supermercado</li>
