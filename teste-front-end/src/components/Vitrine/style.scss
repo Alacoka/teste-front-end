@@ -1,0 +1,18 @@
+.vitrine {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 24px;
+
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        color: #F01C4F;
+        margin-bottom: 32px;
+    }
+
+    .vitrine-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // 4 produtos por linha
+        gap: 24px; // Espaço entre os cards
+    }
+}

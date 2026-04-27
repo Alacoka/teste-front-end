@@ -1,0 +1,57 @@
+.main-header {
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        flex-direction: column; // Empilha a parte superior e o menu
+        gap: 16px;
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo-container {
+                width: 150px; // Ajustar conforme Figma
+            }
+
+            .search-bar {
+                flex-grow: 1;
+                margin: 0 40px;
+                // Adicionar estilos do input com ícone de lupa
+            }
+
+            .user-actions {
+                display: flex;
+                gap: 16px;
+                // Ícones de carrinho, coração, etc.
+            }
+        }
+
+        .main-nav {
+            ul {
+                display: flex;
+                justify-content: space-between; // Espalha os links uniformemente
+                list-style: none;
+
+                li {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #9f9f9f;
+                    cursor: pointer;
+                    transition: color 0.3s;
+
+                    &:hover,
+                    &.active {
+                        color: #F01C4F; // Cor rosa da marca (ajustar exato do Figma)
+                    }
+                }
+            }
+        }
+    }
+}

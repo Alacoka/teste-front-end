@@ -1,0 +1,50 @@
+.product-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px; // Ajustar
+        object-fit: contain; // Garante que a foto do iPhone não corte
+        margin-bottom: 16px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        color: #333333;
+        margin-bottom: 16px;
+        height: 40px; // Mantém alinhamento mesmo se um nome tiver 2 linhas
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 16px;
+    }
+
+    .buy-button {
+        background-color: #F01C4F;
+        color: white;
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: auto; // Empurra o botão pro final do card
+
+        &:hover {
+            background-color: darken(#F01C4F, 10%);
+        }
+    }
+}
