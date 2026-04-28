@@ -8,9 +8,9 @@ $color-bg-search: #F6F5F2;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 
     .container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 80px;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 91px;
     }
 
     .header-top-bar {
@@ -20,7 +20,7 @@ $color-bg-search: #F6F5F2;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 8px 0;
+            height: 32px; // Ajustar conforme Figma
             font-size: 12px;
             color: #9F9F9F;
             gap: 119px; // Medida exata que pegou do Figma
@@ -38,36 +38,31 @@ $color-bg-search: #F6F5F2;
         }
     }
 
-    // --- Middle Bar (Logo, Search, Icons) ---
     .header-middle {
         display: flex;
-        justify-content: space-between; // Isso já afasta o logo da esquerda e os ícones da direita
+        justify-content: space-between;
         align-items: center;
-        padding: 24px 0;
+        margin: 20px;
 
         .logo-container {
             .logo-image {
-                display: block;
-                width: 139px; // Adicionado 'px'
-                height: 41.3px; // Adicionado 'px'
+                width: 139px;
+                height: 41px;
+                top: 47px;
+                opacity: 1;
+
             }
 
-            .logo-placeholder {
-                color: #333;
-                font-size: 28px;
-                font-weight: bold;
-                letter-spacing: -1px;
-            }
         }
 
         .search-bar {
             display: flex;
             align-items: center;
             background-color: #F6F5F2;
-            border-radius: 10px; // Atualizado para 10px do Figma
-            width: 630px; // Adicionado 'px'
-            height: 48px; // Adicionado 'px'
-            padding: 0 16px;
+            border-radius: 10px;
+            width: 630px;
+            height: 48px;
+            padding: 10px 16px;
 
             input {
                 flex: 1;
@@ -107,7 +102,10 @@ $color-bg-search: #F6F5F2;
     // --- Nav Bar ---
     .main-nav {
         border-top: 1px solid #F0F0F0;
-        padding: 16px 0;
+        border-bottom: 1px solid #EAEAEA;
+        padding: 16px 69px;
+        box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.5);
+        background-color: #FFF;
 
         ul {
             display: flex;
@@ -115,7 +113,7 @@ $color-bg-search: #F6F5F2;
             align-items: center;
 
             li {
-                display: flex; // Faltava isso aqui pra não desalinhar a coroa!
+                display: flex;
                 align-items: center;
                 gap: 8px;
                 font-size: 12px;

@@ -1,4 +1,4 @@
-import logo from '../../assets/econverse.png';
+import logo from '../../assets/logo.png';
 import './style.scss';
 
 export function Header() {
@@ -13,7 +13,6 @@ export function Header() {
             </div>
 
             <div className="container">
-                {/* Main Header - Logo, Search, Icons */}
                 <div className="header-middle">
                     <div className="logo-container">
                         <img src={logo} alt="Logo da loja" className="logo" />
