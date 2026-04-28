@@ -1,31 +1,57 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Front-End - Econverse
 
-### Vem ser #Econverse!
+Bem-vindo(a) ao repositório do Teste Técnico para a vaga de Desenvolvedor Front-End da Econverse! Este projeto consiste na construção de uma landing page e-commerce baseada no layout fornecido no Figma, com foco absoluto em fidelidade visual (Pixel Perfect), componentização em React e consumo dinâmico de dados.
 
-Segue abaixo as instruções para a execução do teste.
+## Tecnologias Utilizadas
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail julia.gardiano@econverse.com.br com o título **Teste Vaga FrontEnd**
+* **React** + **TypeScript**
+* **Vite** (para build e dev server super rápidos)
+* **Sass (SCSS)** (para estilização componentizada, utilizando variáveis e aninhamentos)
+* **HTML Semântico** (foco em acessibilidade e boas práticas de SEO)
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Como compilar, testar e rodar o projeto
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+Siga o passo a passo abaixo para executar o projeto localmente na sua máquina de forma rápida e fácil.
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+### Pré-requisitos
+* [Node.js](https://nodejs.org/) instalado na máquina.
+* Gerenciador de pacotes de sua preferência (NPM, Yarn ou PNPM).
 
-**Boa sorte! ;)**
+### 1. Instalação
+Clone este repositório para a sua máquina e acesse a pasta principal do projeto. Em seguida, instale as dependências:
+
+```bash
+# Clone o repositório
+git clone [https://github.com/alacoka/teste-front-end.git](https://github.com/alacoka/teste-front-end.git)
+
+# Acesse a pasta do frontend
+cd teste-front-end/teste-front-end
+
+# Instale as dependências
+npm install
+```
+
+### 2. Rodando o projeto (Modo de Desenvolvimento)
+Para iniciar o servidor local em modo de desenvolvimento (com HMR):
+
+```bash
+npm run dev
+```
+Após executar o comando, acesse a URL indicada no terminal (geralmente `http://localhost:5173`) no seu navegador.
+
+### 3. Compilando o projeto (Build)
+Para compilar o TypeScript e gerar os arquivos estáticos otimizados para produção:
+
+```bash
+npm run build
+```
+Este comando criará a pasta `dist` com a versão final da aplicação.
+
+## Notas de Desenvolvimento e Soluções Adotadas
+
+* **Consumo do JSON & CORS:** A integração com a lista de produtos possui restrições de CORS (Cross-Origin Resource Sharing) caso seja acessada diretamente via `localhost` no navegador ou em deploys estáticos simples. Para garantir que a aplicação possa ser testada e rodada perfeitamente pelos avaliadores durante o `npm run preview` e `npm run dev`, os dados foram incluídos localmente e importados diretamente. A lógica completa da requisição da API via `fetch` foi implementada e mantida comentada no componente `Vitrine`, demonstrando o conhecimento técnico de integração externa e resolução de problemas de rede.
+* **Pixel Perfect:** As medidas (width/height), espaçamentos (gaps/paddings) e o hexadecimal das cores do Figma foram seguidos rigorosamente para garantir a máxima fidelidade ao layout proposto.
+* **Componentização:** O layout foi arquitetado e dividido em componentes independentes (`Header`, `Banner`, `Vitrine`, `ProductCard`, `ProductModal`, `Categories`, `Partners`, `Brands` e `Footer`) para facilitar a manutenção e escalabilidade do código. O Modal de produtos gerencia seu próprio ciclo de vida através dos estados controlados pela `Vitrine`.
+
+---
+Desenvolvido com ☕ e dedicação por Kawã Alacoque.
