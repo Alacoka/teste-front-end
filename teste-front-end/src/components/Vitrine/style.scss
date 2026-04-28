@@ -1,5 +1,5 @@
 $color-brand-blue: #2B34B9; // <-- Troca pelo HEX exato do Figma!
-$color-border: #EAEAEA; // Cinza clarinho das bordas
+$color-border: #eaeaeae8; // Cinza clarinho das bordas
 $color-text-light: #777777;
 
 .vitrine-section {
@@ -20,13 +20,13 @@ $color-text-light: #777777;
 
     // 1. TÍTULO COM AS LINHAS
     .title-wrapper {
-        width: 1138px; // Cravado com o que você mandou
+        width: 1138px;
         height: 72px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 24px;
-        margin-bottom: 16px;
+
 
         .line {
             flex-grow: 1;
@@ -36,18 +36,18 @@ $color-text-light: #777777;
 
         h2 {
             color: $color-brand-blue;
-            font-size: 32px; // Ajusta se no Figma for maior/menor
+            font-size: 32px;
             font-weight: 700;
-            text-transform: uppercase; // Garante que fica em maiúsculo
+            text-transform: uppercase;
         }
     }
 
-    // 2. ABAS (FILTROS)
+
     .filter-tabs {
-        width: 1280px; // Cravado com o que você mandou
+        width: 1280px;
         height: 40px;
         margin-bottom: 40px;
-        border: 1px solid $color-border; // Aquela bordinha em volta de tudo
+        border: 1px solid $color-border;
 
         ul {
             display: flex;
@@ -82,17 +82,18 @@ $color-text-light: #777777;
         }
     }
 
-    // 3. CARROSSEL E SETAS
+
+
     .carousel-wrapper {
-        width: 1364px; // Cravado com o que você mandou
+        width: 1364px;
         height: 500px;
         display: flex;
         align-items: center;
-        justify-content: space-between; // Joga as setas pras pontas
+        justify-content: space-between;
 
         .arrow-btn {
             background-color: #ffffff;
-            border: 1px solid transparent; // Põe uma bordinha se o layout pedir
+            border: 1px solid transparent;
             border-radius: 50%;
             width: 48px;
             height: 48px;
@@ -133,4 +134,12 @@ $color-text-light: #777777;
             scrollbar-width: none; // Firefox
         }
     }
+}
+
+.subtitle {
+    width: 74;
+    height: 23;
+    margin-bottom: 20px;
+    opacity: 1;
+    font-weight: bold;
 }

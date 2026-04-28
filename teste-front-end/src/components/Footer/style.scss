@@ -1,74 +1,217 @@
-.main-footer {
+$color-purple-dark: #271C47;
+$color-yellow: #F6C713;
+$color-bg-gray: #F4F4F4;
+$color-text-dark: #222222;
+$color-text-light: #777777;
+
+.site-footer {
     width: 100%;
-    margin-top: 64px;
+    margin-top: 60px;
 
-    .newsletter {
-        background-color: #1a1a1a;
-        padding: 40px 24px;
-        text-align: center;
-        color: white;
+    .newsletter-section {
+        background-color: $color-purple-dark;
+        width: 100%;
+        height: 162px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
+        .newsletter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        form {
+        .newsletter-text {
+            width: 515px;
+            height: 82px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 16px;
-            max-width: 600px;
-            margin: 0 auto;
+            gap: 8px;
+            color: #ffffff;
+            margin-right: 100px;
 
-            input {
-                flex: 1;
-                padding: 12px 16px;
-                border-radius: 4px;
-                border: none;
+            h2 {
+                font-size: 28px;
+                font-weight: 700;
+                margin: 0;
+                color: #ffffff;
             }
 
-            button {
-                background-color: #F01C4F;
-                color: white;
-                padding: 12px 24px;
-                border-radius: 4px;
-                font-weight: bold;
+            p {
+                font-size: 14px;
+                line-height: 1.4;
+                margin: 0;
+                color: #ffffff;
+            }
+        }
+
+        .newsletter-form {
+            width: 639px;
+            height: 71px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 8px;
+
+            .inputs-row {
+                display: flex;
+                gap: 16px;
+                height: 48px;
+
+                input {
+                    flex: 1;
+                    height: 100%;
+                    padding: 0 16px;
+                    border: none;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: #999999;
+                    }
+                }
+
+                button {
+                    height: 100%;
+                    padding: 0 32px;
+                    background-color: $color-yellow;
+                    color: $color-text-dark;
+                    font-weight: 700;
+                    font-size: 14px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: darken(#F6C713, 10%);
+                    }
+                }
+            }
+
+            .checkbox-row {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #ffffff;
+                font-size: 12px;
+
+                input[type="checkbox"] {
+                    cursor: pointer;
+                }
+
+                label {
+                    cursor: pointer;
+                }
             }
         }
     }
 
-    .footer-links {
-        background-color: #ffffff;
-        padding: 48px 24px;
-        border-top: 1px solid #e0e0e0;
+    // --- 2. RODAPÉ PRINCIPAL ---
+    .main-footer {
+        background-color: $color-bg-gray;
+        width: 100%;
+        display: flex;
+        justify-content: center; // Centraliza caso a tela do usuário seja maior que 1440px
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); // 4 colunas de links
-            gap: 32px;
+        .main-footer-container {
+            width: 1440px; // Medida exata
+            height: 282px; // Medida exata
+            padding: 42px 80px; // Os paddings cravados (top/bottom 42px, left/right 80px)
 
-            .column {
-                h4 {
-                    font-size: 16px;
-                    margin-bottom: 16px;
-                    color: #333333;
-                }
+            display: flex;
+            align-items: stretch; // Faz a linha divisória esticar até o fim da altura
+            gap: 90px; // O gap cirúrgico do Figma unindo os 3 blocos principais!
+        }
 
-                ul {
-                    li {
-                        font-size: 14px;
-                        color: #666666;
-                        margin-bottom: 8px;
-                        cursor: pointer;
+        .footer-company {
+            width: 250px; // Segura a largura do texto da logo para não vazar
+            display: flex;
+            flex-direction: column;
 
-                        &:hover {
-                            color: #F01C4F;
-                        }
+            .footer-logo {
+                width: 140px; // Ajuste se a logo no Figma for maior/menor
+                object-fit: contain;
+                margin-bottom: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                color: $color-text-dark;
+                line-height: 1.5;
+                margin-bottom: 32px;
+            }
+
+            .social-icons {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                img,
+                .icon-placeholder {
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                    color: $color-text-dark;
+                    transition: transform 0.2s;
+
+                    &:hover {
+                        transform: scale(1.1);
                     }
                 }
             }
+        }
+
+        .vertical-divider {
+            width: 1px;
+            background-color: #E2E2E2;
+            // Removemos as margens que tínhamos aqui porque o gap: 90px do pai já empurra tudo!
+        }
+
+        .footer-links {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between; // Espalha Institucional, Ajuda e Termos perfeitamente
+
+            .link-column {
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    font-size: 16px;
+                    color: $color-text-dark;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                }
+
+                a {
+                    font-size: 14px;
+                    color: $color-text-light;
+                    text-decoration: none;
+                    margin-bottom: 16px;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $color-purple-dark;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+        background-color: #ffffff;
+        padding: 24px 0;
+        text-align: center;
+        border-top: 1px solid #EAEAEA;
+
+        p {
+            font-size: 15px;
+            color: $color-text-light;
         }
     }
 }
