@@ -1,18 +1,136 @@
-.vitrine {
-    max-width: 1200px;
-    margin: 48px auto;
-    padding: 0 24px;
+$color-brand-blue: #2B34B9; // <-- Troca pelo HEX exato do Figma!
+$color-border: #EAEAEA; // Cinza clarinho das bordas
+$color-text-light: #777777;
 
-    h2 {
-        text-align: center;
-        font-size: 24px;
-        color: #F01C4F;
-        margin-bottom: 32px;
+.vitrine-section {
+    width: 100%;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        // Você me passou 1364px pro carrossel e container inteiro
+        max-width: 1364px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .vitrine-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); // 4 produtos por linha
-        gap: 24px; // Espaço entre os cards
+    // 1. TÍTULO COM AS LINHAS
+    .title-wrapper {
+        width: 1138px; // Cravado com o que você mandou
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 16px;
+
+        .line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: $color-border;
+        }
+
+        h2 {
+            color: $color-brand-blue;
+            font-size: 32px; // Ajusta se no Figma for maior/menor
+            font-weight: 700;
+            text-transform: uppercase; // Garante que fica em maiúsculo
+        }
+    }
+
+    // 2. ABAS (FILTROS)
+    .filter-tabs {
+        width: 1280px; // Cravado com o que você mandou
+        height: 40px;
+        margin-bottom: 40px;
+        border: 1px solid $color-border; // Aquela bordinha em volta de tudo
+
+        ul {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            list-style: none;
+
+            li {
+                flex: 1; // Divide o espaço igualmente entre todos os itens
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 400;
+                color: $color-text-light;
+                cursor: pointer;
+                border-right: 1px solid $color-border; // Divisória entre os itens
+                transition: color 0.3s, font-weight 0.3s;
+
+                // Tira a borda do último item para não duplicar com a borda externa
+                &:last-child {
+                    border-right: none;
+                }
+
+                // Efeito de hover e da aba ativa
+                &.active,
+                &:hover {
+                    color: $color-brand-blue;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // 3. CARROSSEL E SETAS
+    .carousel-wrapper {
+        width: 1364px; // Cravado com o que você mandou
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // Joga as setas pras pontas
+
+        .arrow-btn {
+            background-color: #ffffff;
+            border: 1px solid transparent; // Põe uma bordinha se o layout pedir
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); // Sombrinha pra seta flutuar
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1); // Dá aquele pulinho ao passar o mouse
+            }
+
+            span {
+                color: #222222;
+                font-size: 28px;
+            }
+        }
+
+        .products-grid {
+            display: flex;
+            align-items: center;
+            gap: 24px; // Espaço entre os cards
+            flex-grow: 1;
+            padding: 20px 0; // Espaço em cima e embaixo para a sombra não cortar!
+
+            // 👇 AS REGRAS DA ROLAGEM AQUI 👇
+            overflow-x: auto; // Ativa a rolagem horizontal
+            scroll-behavior: smooth; // Rolagem suave
+
+            // Oculta a barra de rolagem (Fica invisível mas funciona)
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            -ms-overflow-style: none; // IE e Edge
+            scrollbar-width: none; // Firefox
+        }
     }
 }

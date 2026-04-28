@@ -1,55 +1,80 @@
-import { useState, useEffect } from 'react';
-import type { Product, ProductResponse } from '../../types/Products';
-import { ProductCard } from '../ProductCard';
-import { Modal } from '../Modal';
+import { useState, useEffect, useRef } from 'react';
+import { ProductCard, type Product } from '../ProductCard';
+import { ProductModal } from '../Modal';
 import './style.scss';
 
 export function Vitrine() {
     const [products, setProducts] = useState<Product[]>([]);
-    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        fetch('/produtos.json')
-            .then(response => response.json())
-            .then((data: ProductResponse) => {
-                console.log("Dados da API: ", data);
-                if (data.success) {
-                    setProducts(data.products);
-                }
-            })
-            .catch(error => console.error("Erro ao buscar a API:", error));
+        fetch('../../public/produtos.json')
+            .then(res => res.json())
+            .then(data => setProducts(data.products));
     }, []);
 
-    function handleOpenModal(product: Product) {
+    const handleScrollLeft = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: -1280, behavior: 'smooth' });
+        }
+    };
+
+    const handleScrollRight = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: 1280, behavior: 'smooth' });
+        }
+    };
+
+    const handleOpenModal = (product: Product) => {
         setSelectedProduct(product);
         setIsModalOpen(true);
-    }
-
-    function handleCloseModal() {
-        setIsModalOpen(false);
-        setSelectedProduct(null);
-    }
+    };
 
     return (
-        <section className="vitrine">
+        <section className="vitrine-section">
             <div className="container">
-                <h2>Produtos relacionados</h2>
 
-                <div className="vitrine-grid">
-                    {products.map((product, index) => (
-                        <ProductCard
-                            key={index}
-                            product={product}
-                            onOpenModal={() => handleOpenModal(product)}
-                        />
-                    ))}
+                <div className="title-wrapper">
+                    <div className="line"></div>
+                    <h2>Produtos relacionados</h2>
+                    <div className="line"></div>
                 </div>
-            </div>
 
-            {isModalOpen && selectedProduct && (
-                <Modal product={selectedProduct} onClose={handleCloseModal} />
-            )}
+                <nav className="filter-tabs">
+                    <ul>
+                        <li className="active">CELULAR</li>
+                        <li>ACESSÓRIOS</li>
+                        <li>TABLETS</li>
+                        <li>NOTEBOOKS</li>
+                        <li>TVS</li>
+                        <li>VER TODOS</li>
+                    </ul>
+                </nav>
+
+                <div className="carousel-wrapper">
+                    <button className="arrow-btn left" onClick={handleScrollLeft}>
+                        <span className="material-symbols-outlined">chevron_left</span>
+                    </button>
+
+                    <div className="products-grid" ref={carouselRef}>
+                        {products.map((item, index) => (
+                            <ProductCard key={index} product={item} onOpenModal={handleOpenModal} />
+                        ))}
+                    </div>
+
+                    <button className="arrow-btn right" onClick={handleScrollRight}>
+                        <span className="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+                <ProductModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    product={selectedProduct}
+                />
+
+            </div>
         </section>
     );
 }

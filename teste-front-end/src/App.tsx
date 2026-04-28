@@ -2,6 +2,7 @@ import { Header } from './components/Header';
 import { Banner } from './components/Banner';
 import { Vitrine } from './components/Vitrine';
 import { Footer } from './components/Footer';
+import { Categories } from './components/Categories'
 import './styles/global.scss';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Categories />
         <Vitrine />
       </main>
       <Footer />

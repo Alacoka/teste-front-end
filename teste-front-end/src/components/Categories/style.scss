@@ -1,0 +1,71 @@
+$color-purple: #3442B5; // Roxo da Econverse
+$color-bg-box: #f4f4f4bb; // Cinza clarinho das caixas inativas
+$color-text: #4E4E4E;
+
+.categories-section {
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 40px;
+
+    .categories-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 42px;
+    }
+
+    .category-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: translateY(-4px);
+
+            .icon-box {
+                background-color: #FFF;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+                .material-symbols-outlined {
+                    color: $color-purple;
+                }
+
+
+            }
+
+            p {
+                color: $color-purple;
+            }
+        }
+
+        .icon-box {
+            width: 128px;
+            height: 128px;
+            background-color: $color-bg-box;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, box-shadow 0.3s;
+
+            .material-symbols-outlined {
+                font-size: 60px;
+                color: #222222;
+                transition: color 0.3s;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+
+
+
+    }
+}

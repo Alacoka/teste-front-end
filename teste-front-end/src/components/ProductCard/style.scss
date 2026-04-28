@@ -1,50 +1,95 @@
+$color-brand-blue: #3442B5; // O azul oficial
+$color-text-dark: #222222;
+$color-text-gray: #808080;
+$color-text-light: #BDBDBD;
+
 .product-card {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    padding: 16px;
+    flex-shrink: 0;
+    min-width: 304px;
+    width: 304px;
+    height: 500px;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08); // A sombrinha do card
+    padding: 24px; // Espaçamento interno para os itens não colarem na borda
+
+    // Flexbox mágico para empurrar o botão para o fundo
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
+    justify-content: space-between;
 
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer; // Fica com a mãozinha ao passar o mouse no card inteiro
+
+    // Efeito para o card "pular" ao passar o mouse
     &:hover {
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
         transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
-    .product-image {
+    img {
         width: 100%;
-        height: 200px; // Ajustar
+        height: 200px; // Altura reservada para a foto
         object-fit: contain; // Garante que a foto do iPhone não corte
         margin-bottom: 16px;
     }
 
-    .product-name {
+    .description {
         font-size: 14px;
-        color: #333333;
-        margin-bottom: 16px;
-        height: 40px; // Mantém alinhamento mesmo se um nome tiver 2 linhas
+        color: $color-text-gray;
+        margin-bottom: 12px;
+        line-height: 1.4;
+
+        // Truque avançado: Se a descrição da API vier muito grande, corta na 2ª linha com "..."
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
-    .product-price {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333333;
+    .old-price {
+        font-size: 14px;
+        color: $color-text-light;
+        text-decoration: line-through; // O riscadinho do preço antigo
+        margin-bottom: 4px;
+    }
+
+    .price {
+        font-size: 24px; // Preço bem destacado
+        font-weight: 700;
+        color: $color-text-dark;
+        margin-bottom: 4px;
+    }
+
+    .installments {
+        font-size: 12px;
+        color: $color-text-gray;
+        margin-bottom: 12px;
+    }
+
+    .shipping {
+        font-size: 12px;
+        color: $color-brand-blue; // O frete é azul!
+        font-weight: 500;
         margin-bottom: 16px;
     }
 
-    .buy-button {
-        background-color: #F01C4F;
-        color: white;
-        width: 100%;
-        padding: 12px;
-        border-radius: 4px;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-top: auto; // Empurra o botão pro final do card
+    .buy-btn {
+        width: 100%; // O botão ocupa a largura toda da base
+        height: 44px;
+        background-color: $color-brand-blue;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+        border-radius: 4px; // Arredondamento do botão
+        cursor: pointer;
+        transition: background-color 0.3s;
 
         &:hover {
-            background-color: darken(#F01C4F, 10%);
+            // Escurece o azul em 10% no hover
+            background-color: darken(#3442B5, 10%);
         }
     }
 }
