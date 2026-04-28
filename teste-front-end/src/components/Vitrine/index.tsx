@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { ProductCard, type Product } from '../ProductCard';
 import { ProductModal } from '../Modal';
 import './style.scss';
-import mockProducts from '../../../public/produtos.json';
 
 export function Vitrine() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -11,6 +10,7 @@ export function Vitrine() {
     const carouselRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // fetch('https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json')
         fetch('/produtos.json')
             .then(res => {
                 if (!res.ok) {

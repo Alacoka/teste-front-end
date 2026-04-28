@@ -32,7 +32,7 @@ npm install
 ```
 
 ### 2. Rodando o projeto (Modo de Desenvolvimento)
-Para iniciar o servidor local em modo de desenvolvimento (com HMR):
+Para iniciar o servidor local em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -49,8 +49,8 @@ Este comando criará a pasta `dist` com a versão final da aplicação.
 
 ## Notas de Desenvolvimento e Soluções Adotadas
 
-* **Consumo do JSON & CORS:** A integração com a lista de produtos possui restrições de CORS (Cross-Origin Resource Sharing) caso seja acessada diretamente via `localhost` no navegador ou em deploys estáticos simples. Para garantir que a aplicação possa ser testada e rodada perfeitamente pelos avaliadores durante o `npm run preview` e `npm run dev`, os dados foram incluídos localmente e importados diretamente. A lógica completa da requisição da API via `fetch` foi implementada e mantida comentada no componente `Vitrine`, demonstrando o conhecimento técnico de integração externa e resolução de problemas de rede.
-* **Pixel Perfect:** As medidas (width/height), espaçamentos (gaps/paddings) e o hexadecimal das cores do Figma foram seguidos rigorosamente para garantir a máxima fidelidade ao layout proposto.
+* **Consumo do JSON & CORS:** A integração com a lista de produtos possui restrições de CORS (Cross-Origin Resource Sharing) caso seja acessada diretamente via `localhost` no navegador ou em deploys estáticos simples. Para garantir que a aplicação possa ser testada e rodada perfeitamente pelos avaliadores durante o `npm run preview` e `npm run dev`, os dados foram incluídos localmente e importados diretamente. A lógica completa da requisição da API via `fetch` foi implementada e mantida comentada no componente `Vitrine`.
+* **Pixel Perfect:** As medidas, espaçamentos e o hexadecimal das cores do Figma foram seguidos rigorosamente para garantir a máxima fidelidade ao layout proposto.
 * **Componentização:** O layout foi arquitetado e dividido em componentes independentes (`Header`, `Banner`, `Vitrine`, `ProductCard`, `ProductModal`, `Categories`, `Partners`, `Brands` e `Footer`) para facilitar a manutenção e escalabilidade do código. O Modal de produtos gerencia seu próprio ciclo de vida através dos estados controlados pela `Vitrine`.
 
 ---
