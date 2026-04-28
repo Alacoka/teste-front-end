@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ProductCard, type Product } from '../ProductCard';
 import { ProductModal } from '../Modal';
 import './style.scss';
+import mockProducts from '../../../public/produtos.json';
 
 export function Vitrine() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -10,9 +11,21 @@ export function Vitrine() {
     const carouselRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        fetch('../../public/produtos.json')
-            .then(res => res.json())
-            .then(data => setProducts(data.products));
+        fetch('/produtos.json')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Erro na rede: ' + res.status);
+                }
+                return res.json();
+            })
+            .then(data => {
+                if (data && data.products) {
+                    setProducts(data.products);
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao carregar os produtos:", error);
+            });
     }, []);
 
     const handleScrollLeft = () => {
