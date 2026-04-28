@@ -110,30 +110,30 @@ $color-text-light: #777777;
         }
     }
 
-    // --- 2. RODAPÉ PRINCIPAL ---
+
     .main-footer {
         background-color: $color-bg-gray;
         width: 100%;
         display: flex;
-        justify-content: center; // Centraliza caso a tela do usuário seja maior que 1440px
+        justify-content: center;
 
         .main-footer-container {
-            width: 1440px; // Medida exata
-            height: 282px; // Medida exata
-            padding: 42px 80px; // Os paddings cravados (top/bottom 42px, left/right 80px)
+            width: 1440px;
+            height: 282px;
+            padding: 42px 80px;
 
             display: flex;
-            align-items: stretch; // Faz a linha divisória esticar até o fim da altura
-            gap: 90px; // O gap cirúrgico do Figma unindo os 3 blocos principais!
+            align-items: stretch;
+            gap: 90px;
         }
 
         .footer-company {
-            width: 250px; // Segura a largura do texto da logo para não vazar
+            width: 250px;
             display: flex;
             flex-direction: column;
 
             .footer-logo {
-                width: 140px; // Ajuste se a logo no Figma for maior/menor
+                width: 140px;
                 object-fit: contain;
                 margin-bottom: 24px;
             }
@@ -168,13 +168,12 @@ $color-text-light: #777777;
         .vertical-divider {
             width: 1px;
             background-color: #E2E2E2;
-            // Removemos as margens que tínhamos aqui porque o gap: 90px do pai já empurra tudo!
         }
 
         .footer-links {
             flex-grow: 1;
             display: flex;
-            justify-content: space-between; // Espalha Institucional, Ajuda e Termos perfeitamente
+            justify-content: space-between;
 
             .link-column {
                 display: flex;

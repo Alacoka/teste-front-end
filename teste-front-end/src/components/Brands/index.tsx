@@ -2,7 +2,6 @@ import './style.scss';
 import logoImg from '../../assets/logo.png'; // Importa a logo aqui!
 
 export function Brands() {
-    // Array simples para renderizar os 5 círculos sem repetir código
     const brandsArray = [1, 2, 3, 4, 5];
 
     return (

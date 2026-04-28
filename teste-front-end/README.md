@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Teste Front-End Econverse 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido como parte do processo seletivo para a vaga de Desenvolvedor Front-End na **Econverse**. O objetivo principal foi construir uma landing page de e-commerce baseada em um design do Figma, focando na fidelidade visual, componentização e consumo de dados dinâmicos.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **[React](https://reactjs.org/)**: Biblioteca JavaScript para construção de interfaces de usuário.
+* **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática ao código.
+* **[Vite](https://vitejs.dev/)**: Ferramenta de build super rápida para projetos web modernos.
+* **[Sass (SCSS)](https://sass-lang.com/)**: Pré-processador CSS utilizado para componentizar e organizar os estilos, mantendo variáveis e aninhamentos limpos.
+* **HTML Semântico**: Estruturação focada em acessibilidade.
 
-## React Compiler
+## ✨ Funcionalidades Implementadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Fidelidade Pixel a Pixel**: Respeito rigoroso às medidas, espaçamentos, cores e tipografia do layout original do Figma.
+* **Vitrine de Produtos Dinâmica**: Consumo de um arquivo JSON simulando uma requisição de API para listar os produtos dinamicamente.
+* **Carrossel de Produtos**: Navegação funcional entre os cards da vitrine sem depender de bibliotecas de terceiros (feito com CSS e React refs).
+* **Modal de Detalhes**: Interação acionada ao clicar no botão "Comprar", abrindo um modal centralizado com as informações específicas do produto selecionado.
 
-## Expanding the ESLint configuration
+## ⚙️ Como compilar, testar e rodar o projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Siga as instruções abaixo para rodar o projeto localmente na sua máquina.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Pré-requisitos
+Certifique-se de ter o **Node.js** (versão 16 ou superior) e o **NPM** (ou Yarn/PNPM) instalados na sua máquina.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 1. Instalação
+Faça o clone deste repositório e acesse a pasta do projeto. Em seguida, instale as dependências:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+# Clone o repositório
+git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Entre na pasta do projeto
+cd NOME_DO_REPOSITORIO
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Instale as dependências
+npm install

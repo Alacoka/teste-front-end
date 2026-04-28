@@ -6,7 +6,6 @@ export function Footer() {
     return (
         <footer className="site-footer">
 
-            {/* 1. SEÇÃO DA NEWSLETTER */}
             <div className="newsletter-section">
                 <div className="container newsletter-container">
 
@@ -34,11 +33,9 @@ export function Footer() {
                 </div>
             </div>
 
-            {/* 2. RODAPÉ PRINCIPAL */}
             <div className="main-footer">
                 <div className="container main-footer-container">
 
-                    {/* Bloco da Logo e Redes */}
                     <div className="footer-company">
                         <img src={logoImg} alt="Econverse" className="footer-logo" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -50,10 +47,8 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* A linha divisória */}
                     <div className="vertical-divider"></div>
 
-                    {/* Bloco dos Links */}
                     <div className="footer-links">
                         <div className="link-column">
                             <h3>Institucional</h3>
@@ -80,7 +75,6 @@ export function Footer() {
                 </div>
             </div>
 
-            {/* 3. BARRA INFERIOR */}
             <div className="bottom-bar">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
